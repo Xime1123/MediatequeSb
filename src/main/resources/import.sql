@@ -30,11 +30,11 @@ insert into items(id, title, Number_copies, release_Date) values(15, 'George', 4
 
 
 
-insert into dvd (id_Item, director, duration,TYPEDVD) values (1,'Carla Colcomb', 177, 'NORMAL');         
-insert into dvd (id_Item, director, duration,TYPEDVD) values (2,'Cooper Enocksson', 151, 'BLUE_RAY');                                        
-insert into dvd (id_Item, director, duration,TYPEDVD) values (3,'Estele Rany', 151, 'BLUE_RAY');           
-insert into dvd (id_Item, director, duration,TYPEDVD) values (4,'Dougy Balsdon', 82, 'BLUE_RAY');  
-insert into dvd (id_Item, director, duration,TYPEDVD) values (5,'Carla Colcomb', 177, 'NORMAL'); 
+insert into dvd (id_Item, director, duration,TYPEDVD) values (1,'Carla Colcomb', 177, 'DVD');         
+insert into dvd (id_Item, director, duration,TYPEDVD) values (2,'Cooper Enocksson', 151, 'BLURAY');                                        
+insert into dvd (id_Item, director, duration,TYPEDVD) values (3,'Estele Rany', 151, 'BLURAY');           
+insert into dvd (id_Item, director, duration,TYPEDVD) values (4,'Dougy Balsdon', 82, 'BLURAY');  
+insert into dvd (id_Item, director, duration,TYPEDVD) values (5,'Carla Colcomb', 177, 'DVD'); 
 
 
 insert into cd (id_Item, artist, duration, Numbertitles) values (6,'Michael Jackson', 172, 7);                                        
@@ -42,8 +42,6 @@ insert into cd (id_Item, artist, duration, Numbertitles) values (7,'Britney Spea
 insert into cd (id_Item, artist, duration, Numbertitles) values (8,'Shakira', 113, 5);                                            
 insert into cd (id_Item, artist, duration, Numbertitles) values (9,'Rihanna', 165, 2);                                         
 insert into cd (id_Item, artist, duration, Numbertitles) values (10,'Marc Anthony', 155, 6);     
-
-
                                                                                                                                                                                                                                                      
 insert into book (id_Item, author, ISBN_Number) values (11,'Natal Aird', 504747);                                                                                                                                                                                                     
 insert into book (id_Item, author, ISBN_Number) values (12,'Devland Cobello', 710626);                                                                                                                                                                                                
@@ -52,12 +50,8 @@ insert into book (id_Item, author, ISBN_Number) values (14,'Base Sadd', 289038);
 insert into book (id_Item, author, ISBN_Number) values (15,'Helyn Toulson', 760761);      
 
 
-
-
-
 insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-19','2022-03-26',1,1);
 insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-18','2022-03-25',2,7);
 insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-20','2022-03-27',3,5);
                                       
-
 

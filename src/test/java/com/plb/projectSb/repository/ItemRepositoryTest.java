@@ -43,6 +43,17 @@ public class ItemRepositoryTest {
 		
 	
 	}
+	
+	/*@Test
+	public void  findByReleaseDateTest(){
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.YEAR, 2011);
+		List<Item> response = itemRepository.findByReleaseDate(cal.getTime());
+		System.out.println("Nombre de nouveautés : " + response);
+		assertEquals(2, response.size());
+		
+		
+	}*/
 		
 		
 	
