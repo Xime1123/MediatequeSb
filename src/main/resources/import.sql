@@ -19,8 +19,8 @@ insert into items(id, title, Number_copies, release_Date) values(5, 'Harry potte
 insert into items(id, title, Number_copies, release_Date) values(6, 'Bad', 3, '2020-03-02');
 insert into items(id, title, Number_copies, release_Date) values(7, 'Ops I did it again', 0, '2017-09-13');
 insert into items(id, title, Number_copies, release_Date) values(8, 'She wolf', 2, '2016-05-08');
-insert into items(id, title, Number_copies, release_Date) values(9, 'Loud', 5, '2010-12-05');
-insert into items(id, title, Number_copies, release_Date) values(10,'Contra la corriente', 0, '2008-01-21'); 
+insert into items(id, title, Number_copies, release_Date) values(9, 'Loud', 5, '2022-10-24');
+insert into items(id, title, Number_copies, release_Date) values(10,'Contra la corriente', 0, '2022-10-24'); 
 
 insert into items(id, title, Number_copies, release_Date) values(11, 'Animal farm', 1, '2001-03-27'); 
 insert into items(id, title, Number_copies, release_Date) values(12, 'Charlie and the chocolat factory', 0, '2009-09-19'); 
