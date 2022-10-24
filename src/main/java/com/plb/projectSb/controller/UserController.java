@@ -5,14 +5,12 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.plb.projectSb.service.UserService;
@@ -47,9 +45,9 @@ public  ResponseEntity <List<User>> getAll(){
 	List <User> allUsers = userService.getAll();
 
 	if (allUsers .isEmpty()) {
-		return ResponseEntity.notFound().build();
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	} else {
-		return  ResponseEntity.ok(allUsers);
+		return new  ResponseEntity<>(allUsers, HttpStatus.OK);
 	}
 
 }
@@ -57,14 +55,14 @@ public  ResponseEntity <List<User>> getAll(){
 
 //Get user by login
 @GetMapping(value= "/by-login/{login}")
-public  ResponseEntity<Optional<User>> findByLogin(@PathVariable String login){
+public  ResponseEntity<Optional<User>> findByLogin(@PathVariable String login) throws Exception{
 
 	Optional<User> userByLogin = userService.findByLogin(login);
 
 	if (userByLogin.isEmpty()) {
-		return ResponseEntity.notFound().build();
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	} else {
-		return  ResponseEntity.ok( userByLogin);
+		return new  ResponseEntity<>(userByLogin, HttpStatus.OK);
 	}
 
 }

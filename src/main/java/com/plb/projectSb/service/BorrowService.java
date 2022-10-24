@@ -1,4 +1,4 @@
-/*package com.plb.projectSb.service;
+package com.plb.projectSb.service;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +36,8 @@ public class BorrowService {
 	}
 
 
-// 	//make a borrow and do not exceed 3 per member
-	public Borrow makeABorrow( Long user_id, Long item_id ,List<Item> items ) {
+  //make a borrow and do not exceed 3 per member
+	public Borrow makeABorrow( Long user_id, List<Long> items_id ) {
 	User user1= userRepository.findById(user_id).get();
 		int numBorrows= user1.getBorrows().size();
 
@@ -46,14 +47,14 @@ public class BorrowService {
 		
 		 List<Item> itemsForBorrow = new ArrayList<>();
 		  
-		for(Item item: items){
-		            Item item1= itemRepository.getById(item_id);      
-		            if(item1.getCopiesNumber() == 0){
+		for(Item item: itemsForBorrow){      
+		            if(item.getCopiesNumber() == 0){
 		                System.out.println("Item indisponible actuellement");
-		            } else {
-		                item1.setCopiesNumber(item1.getCopiesNumber()- 1);
-		                itemsForBorrow.add(item1);
-		            }
+		            } 
+		            item.setCopiesNumber(item.getCopiesNumber()- 1);
+		             itemsForBorrow.add(item);
+		             itemRepository.save(item);
+		            
 		        }
 		
 		 Borrow reservation = new Borrow();
@@ -66,27 +67,15 @@ public class BorrowService {
 	   
 			
 		}
+	
+	  //return a borrow
+	
 		
 	}
   
 
-       
-			
-			/*
-			
-		
-
-	
-	
-	 // Get the borrows made by the user
- 	public List<Borrow> findByUser(User user){
- 		
- 		List<Borrow> allBorrow = borrowRepository.findByUser(User user);
- 		return  (allBorrow);
- 		
- 	};
-	s
+ 
 	
 
 
-}*/
+

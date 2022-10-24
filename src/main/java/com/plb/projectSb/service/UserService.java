@@ -18,7 +18,7 @@ public class UserService {
 	}
 	// create new user	
 	public User saveUser(User user) {	 
-			 return  this.userRepository.save(user);
+			 return this.userRepository.save(user);
 					
 			}
 	// Get all users
@@ -27,10 +27,9 @@ public class UserService {
 		return this.userRepository.findAll();
 	} 
 	
-
-
 	// Get user by login
-	public Optional<User> findByLogin(String login){
+	public Optional<User> findByLogin(String login) {
+		
 		return  this.userRepository.findByLogin(login);
 
 	}
