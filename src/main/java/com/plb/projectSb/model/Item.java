@@ -1,4 +1,4 @@
-package com.plb.projectSb.entity;
+package com.plb.projectSb.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -50,6 +50,52 @@ public class Item implements Serializable {
 
 	@ManyToMany(mappedBy="items", fetch = FetchType.LAZY)
 	private Set<Borrow> borrows = new HashSet<Borrow>();
+	
+	
+	// Setters and Getters
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getCopiesNumber() {
+		return copiesNumber;
+	}
+
+	public void setCopiesNumber(int copiesNumber) {
+		this.copiesNumber = copiesNumber;
+	}
+
+	public LocalDate getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(LocalDate releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public Set<Borrow> getBorrows() {
+		return borrows;
+	}
+
+	public void setBorrows(Set<Borrow> borrows) {
+		this.borrows = borrows;
+	}
+
+
+	
 	
 
 
