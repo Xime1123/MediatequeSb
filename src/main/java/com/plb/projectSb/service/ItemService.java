@@ -2,7 +2,6 @@ package com.plb.projectSb.service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -27,11 +26,11 @@ public class ItemService {
 	// Get all Cds items
 	 public List<Item> getAllCd(){
 	// Get of the elements of database;
-	List<Item> allItems1= itemRepository.findAll();
+	List<Item> allItems= itemRepository.findAll();
 		 
 		List<Item> allItemsCd = new ArrayList<>();	
 		
-		for (Item allItem: allItems1) {
+		for (Item allItem: allItems) {
   			
  			 if(allItem instanceof Cd) {
    			  

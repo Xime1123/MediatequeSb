@@ -55,4 +55,5 @@ insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-18
 insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-20','2022-03-27',3,5);
                                       
 insert into borrow_items (borrows_id, items_id) values (1,13);
+insert into borrow_items (borrows_id, items_id) values (2,1);
 insert into borrow_items (borrows_id, items_id) values(3,8);

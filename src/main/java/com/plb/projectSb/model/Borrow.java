@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -80,6 +82,7 @@ private static final long serialVersionUID = 6590486482810196501L;
 
 	// Relation 
 	@ManyToMany
+	@JsonIgnore
 	@JoinColumn(name="item_id")
 	private List<Item> items;
 

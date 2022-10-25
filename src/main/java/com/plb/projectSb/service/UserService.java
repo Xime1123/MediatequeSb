@@ -21,11 +21,10 @@ public class UserService {
 	
 	
 	// Get user by login
-	public Optional<User> findByLogin(String login) {
+    public Optional<User> findByLogin(String login) throws Exception {
 		
 		Optional<User> user = Optional.ofNullable(userRepository.findByLogin(login).orElseThrow(() -> new EntityNotFoundException("User does not exist!")));;
 			return  user;
-
 	}
 	
 	// Get all user

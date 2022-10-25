@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.plb.projectSb.service.UserService;
+import com.plb.projectSb.exception.ItemNotFoundException;
 import com.plb.projectSb.model.*;
 
 @RestController
-@RequestMapping(value="/users")
+@RequestMapping("/users")
 
 public class UserController {
 	
@@ -43,6 +44,7 @@ public  ResponseEntity<Optional<User>> findByLogin(@PathVariable String login) t
 	}
 
 }
+
 
 //Get all users
 @GetMapping

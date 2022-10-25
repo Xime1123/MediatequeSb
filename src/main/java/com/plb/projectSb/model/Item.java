@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -50,6 +51,7 @@ public class Item implements Serializable {
 	private Date releaseDate;
 
 	@ManyToMany(mappedBy="items", fetch = FetchType.LAZY)
+	@JsonIgnore
 	private Set<Borrow> borrows = new HashSet<Borrow>();
 	
 	

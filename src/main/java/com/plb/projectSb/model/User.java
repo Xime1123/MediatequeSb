@@ -9,6 +9,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Data
@@ -40,11 +42,11 @@ public class User implements Serializable {
 	private String lastname;
 	
 	
-	public static int maxBorrow=3;
 
    // Relation One-to Many with Borrow 
 	
 	@OneToMany( mappedBy = "user",cascade=CascadeType.ALL,orphanRemoval=true)
+	@JsonIgnore
 	private Set<Borrow> borrows = new HashSet<Borrow>();
 
 
