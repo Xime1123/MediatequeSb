@@ -29,21 +29,47 @@ public class ItemController {
 	BorrowRepository borrowRepository;
 
 	
-	@GetMapping
-	public  ResponseEntity <List<Item>> getAll(){
+	@GetMapping (value= "cd-items")
+	public  ResponseEntity <List<Item>> getAllCd(){
 
-		List <Item> allitem = itemService.getAll();
+		List <Item> Cds= itemService.getAllCd();
 
-		if (allitem .isEmpty()) {
-			return ResponseEntity.notFound().build();
+		if (Cds .isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} else {
-			return  ResponseEntity.ok(allitem);
+			return  new  ResponseEntity<>(Cds, HttpStatus.OK);
+		}
+		
+	}
+	
+	@GetMapping (value= "dvd-items")
+	public  ResponseEntity <List<Item>> getAllDvd(){
+
+		List <Item> Dvds= itemService.getAllDvd();
+
+		if (Dvds.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		} else {
+			return  new  ResponseEntity<>(Dvds, HttpStatus.OK);
+		}
+		
+	}
+	
+	@GetMapping (value= "book-items")
+	public  ResponseEntity <List<Item>> getAllbook(){
+
+		List <Item> Books= itemService.getAllBook();
+
+		if (Books .isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		} else {
+			return  new  ResponseEntity<>(Books, HttpStatus.OK);
 		}
 		
 	}
 
 	
-	@GetMapping(value= "/items-disponibles")
+	@GetMapping(value= "available-items")
 	public ResponseEntity <List<Item>> findByItemDisp(){
 		 
 		 List<Item> dispItem = itemService.findByItemDisp();
@@ -55,19 +81,19 @@ public class ItemController {
 		
 	}
 	
-	@GetMapping(value= "/items-new-releases")
-	public ResponseEntity <List<Item>> findByReleaseDate(){
-		
-		
+	
+	@GetMapping(value= "/new-cd-items")
+	public ResponseEntity <List<Item>> findsNews(){
 		 
-		 List<Item> newItem = itemService.findByReleaseDate(Date today);
-		 if (newItem.isEmpty()) {
+		 List<Item> newitems= itemService.findNewsCd();
+		 if (newitems.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			} else {
-				return new  ResponseEntity<>(newItem, HttpStatus.OK);
+				return new  ResponseEntity<>(newitems, HttpStatus.OK);
 			}
 		
 	}
+
 	
 	
 	

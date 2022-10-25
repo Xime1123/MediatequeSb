@@ -1,5 +1,9 @@
 package com.plb.projectSb.service;
+import java.util.List;
 import java.util.Optional;
+
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.stereotype.Service;
 import com.plb.projectSb.repository.UserRepository;
 import com.plb.projectSb.model.*;
@@ -18,8 +22,18 @@ public class UserService {
 	
 	// Get user by login
 	public Optional<User> findByLogin(String login) {
-			return  this.userRepository.findByLogin(login);
+		
+		Optional<User> user = Optional.ofNullable(userRepository.findByLogin(login).orElseThrow(() -> new EntityNotFoundException("User does not exist!")));;
+			return  user;
 
 	}
+	
+	// Get all user
+	public List<User> GetAll(){
+		
+	    return userRepository.findAll();
+	}
+	
+	
 	
 }

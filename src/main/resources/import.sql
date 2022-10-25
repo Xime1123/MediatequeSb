@@ -13,19 +13,19 @@ insert into users (login, password, firstname, lastname,id) values ('verogarcia@
 insert into items(id, title, Number_copies, release_Date) values(1, 'Pulp Fiction', 4, '1994-03-04');
 insert into items(id, title, Number_copies, release_Date) values(2, 'Inception', 5, '2018-04-15');
 insert into items(id, title, Number_copies, release_Date) values(3, 'Titanic', 0, '2006-06-07');
-insert into items(id, title, Number_copies, release_Date) values(4, 'Shrek', 1, '2020-11-23');
+insert into items(id, title, Number_copies, release_Date) values(4, 'Shrek', 1, '2022-07-26');
 insert into items(id, title, Number_copies, release_Date) values(5, 'Harry potter', 0, '2017-10-24');
 
-insert into items(id, title, Number_copies, release_Date) values(6, 'Bad', 3, '2020-03-02');
+insert into items(id, title, Number_copies, release_Date) values(6, 'Bad', 1, '2020-03-02');
 insert into items(id, title, Number_copies, release_Date) values(7, 'Ops I did it again', 0, '2017-09-13');
 insert into items(id, title, Number_copies, release_Date) values(8, 'She wolf', 2, '2016-05-08');
-insert into items(id, title, Number_copies, release_Date) values(9, 'Loud', 5, '2022-10-24');
-insert into items(id, title, Number_copies, release_Date) values(10,'Contra la corriente', 0, '2022-10-24'); 
+insert into items(id, title, Number_copies, release_Date) values(9, 'Loud', 5, '2019-10-24');
+insert into items(id, title, Number_copies, release_Date) values(10,'Contra la corriente', 2, '2022-09-30'); 
 
 insert into items(id, title, Number_copies, release_Date) values(11, 'Animal farm', 1, '2001-03-27'); 
 insert into items(id, title, Number_copies, release_Date) values(12, 'Charlie and the chocolat factory', 0, '2009-09-19'); 
 insert into items(id, title, Number_copies, release_Date) values(13, 'Drama', 1, '2018-05-12'); 
-insert into items(id, title, Number_copies, release_Date) values(14, 'Bad guys', 2, '2022-12-04'); 
+insert into items(id, title, Number_copies, release_Date) values(14, 'Bad guys', 2, '2022-10-04'); 
 insert into items(id, title, Number_copies, release_Date) values(15, 'George', 4, '2009-01-01'); 
 
 
@@ -54,4 +54,5 @@ insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-19
 insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-18','2022-03-25',2,7);
 insert into borrow (borrow_Date, return_Date , id , user_id) values ('2022-10-20','2022-03-27',3,5);
                                       
-
+insert into borrow_items (borrows_id, items_id) values (1,13);
+insert into borrow_items (borrows_id, items_id) values(3,8);

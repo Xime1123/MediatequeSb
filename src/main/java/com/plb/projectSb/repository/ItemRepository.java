@@ -22,6 +22,9 @@ public interface ItemRepository extends JpaRepository <Item, Long>{
 	//Get all  new items
 	 @Query("SELECT i  FROM Item i  WHERE i.releaseDate > ?1")
 	 public List<Item> findByReleaseDate(Date date);
+	 
+	 
+
 	   
 	
 

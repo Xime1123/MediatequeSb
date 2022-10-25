@@ -2,6 +2,7 @@ package com.plb.projectSb.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -46,7 +47,7 @@ public class Item implements Serializable {
 	@NotNull
 	@Column(name="release_Date")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	private LocalDate releaseDate;
+	private Date releaseDate;
 
 	@ManyToMany(mappedBy="items", fetch = FetchType.LAZY)
 	private Set<Borrow> borrows = new HashSet<Borrow>();
@@ -78,11 +79,11 @@ public class Item implements Serializable {
 		this.copiesNumber = copiesNumber;
 	}
 
-	public LocalDate getReleaseDate() {
+	public @NotNull Date getReleaseDate() {
 		return releaseDate;
 	}
 
-	public void setReleaseDate(LocalDate releaseDate) {
+	public void setReleaseDate(@NotNull Date releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 

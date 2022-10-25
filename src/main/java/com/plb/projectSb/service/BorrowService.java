@@ -41,7 +41,7 @@ public class BorrowService {
 
 
   //make a borrow and do not exceed 3 per member
-	public Borrow makeABorrow( Long user_id, List<Item> items ) throws Exception {
+	public Borrow createABorrow( Long user_id, List<Item> items ) throws Exception {
 	
 		User user= userRepository.findById(user_id).orElseThrow(() -> new EntityNotFoundException("User does not exist!"));
          
@@ -101,7 +101,7 @@ public class BorrowService {
 		// 
 		for(Item returnItem: items) {
 			 returnItem.setCopiesNumber(returnItem.getCopiesNumber()+1);
-			 borrowRepository.save();
+			 itemRepository.save(returnItem);
 			
 			
 		}
@@ -111,7 +111,6 @@ public class BorrowService {
 		
 		
 	}
-	
 	
 	
 		

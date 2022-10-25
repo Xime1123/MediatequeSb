@@ -1,6 +1,7 @@
 package com.plb.projectSb.controller;
 
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -43,7 +44,19 @@ public  ResponseEntity<Optional<User>> findByLogin(@PathVariable String login) t
 
 }
 
+//Get all users
+@GetMapping
+public List<User> GetAll(){
+	return userService.GetAll();
+
+      
+	}
+	
+	
 }
+
+
+
 
 
 

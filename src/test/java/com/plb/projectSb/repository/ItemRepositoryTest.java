@@ -1,4 +1,7 @@
 package com.plb.projectSb.repository;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -43,18 +46,27 @@ public class ItemRepositoryTest {
 		
 	
 	}
-	
-	/*@Test
-	public void  findByReleaseDateTest(){
+	@Test
+	public void  findByReleaseDateTest() {
 		Calendar cal = Calendar.getInstance();
-		cal.set(Calendar.YEAR, 2011);
-		List<Item> response = itemRepository.findByReleaseDate(cal.getTime());
-		System.out.println("Nombre de nouveautés : " + response);
-		assertEquals(2, response.size());
+		cal.set(Calendar.MONTH, cal.get(Calendar.MONTH-1));
+        Date date = cal.getTime();
+        
+        int copiesNumber= 0;
+		List<Item> news =  itemRepository.findByReleaseDate(date);
+		 for (Item item : news) {
+	            if(item.getCopiesNumber()>0 && date.before(item.getReleaseDate())) {
+	            	copiesNumber++;
+	            }
+	        }
+		    assertNotNull(copiesNumber);
 		
+	}
+
+	private void assertNotNull(int copiesNumber) {
+		// TODO Auto-generated method stub
 		
-	}*/
-		
+	}
 		
 	
 	
