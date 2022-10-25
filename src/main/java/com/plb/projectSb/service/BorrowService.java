@@ -1,20 +1,17 @@
 package com.plb.projectSb.service;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import org.springframework.stereotype.Service;
 import com.plb.projectSb.model.Borrow;
 import com.plb.projectSb.model.Item;
 import com.plb.projectSb.model.User;
@@ -54,10 +51,10 @@ public class BorrowService {
 				Item itemAdd = itemRepository.findById(item.getId()).orElseThrow(() -> new EntityNotFoundException("this item doesn't exist"));
 				if(itemAdd.getCopiesNumber()==0){
 					throw new Exception("There aren´t a item disponible");
-				} else {
-					itemAdd.setCopiesNumber(itemAdd.getCopiesNumber()-1);
-					 borrowItems.add(itemAdd);
-				}
+				} 
+				itemAdd.setCopiesNumber(itemAdd.getCopiesNumber()-1);
+			    borrowItems.add(itemAdd);
+				
 			}
 		 
 		 

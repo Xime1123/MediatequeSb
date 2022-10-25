@@ -1,6 +1,5 @@
 package com.plb.projectSb.service;
 import java.util.List;
-import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -21,10 +20,10 @@ public class UserService {
 	
 	
 	// Get user by login
-    public Optional<User> findByLogin(String login) throws Exception {
+    public User findByLogin(String login) throws EntityNotFoundException {
 		
-		Optional<User> user = Optional.ofNullable(userRepository.findByLogin(login).orElseThrow(() -> new EntityNotFoundException("User does not exist!")));;
-			return  user;
+    	return  userRepository.findByLogin(login).orElseThrow(() -> new EntityNotFoundException("User does not exist!"));
+			
 	}
 	
 	// Get all user

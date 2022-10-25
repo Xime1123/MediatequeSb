@@ -2,20 +2,18 @@ package com.plb.projectSb.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.List;
-import java.util.Optional;
+
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.plb.projectSb.model.Cd;
+import org.springframework.boot.test.context.SpringBootTest;
 import com.plb.projectSb.model.Item;
 
-
+@SpringBootTest
 public class ItemServiceTest {
 	@Autowired
 	public ItemService itemService;
