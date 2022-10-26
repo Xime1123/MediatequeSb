@@ -13,11 +13,7 @@ import com.plb.projectSb.model.*;
 
 		  // Get users by login
 		   public Optional<User>findByLogin(String login); 
-		   
-		   //Delete user by Login
-		    void deleteByLogin(String login);
-		   
-		  
+	
 		  
 		   
 		   

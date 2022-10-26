@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,6 @@ import com.plb.projectSb.repository.UserRepository;
 import com.plb.projectSb.service.BorrowService;
 
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/borrows")
@@ -39,7 +39,7 @@ public class BorrowController {
 	private  UserRepository userRepository; 
 	
 
-	@PostMapping("/user-borrow/{user_id}")
+	@PostMapping("/user/{user_id}")
 	public  ResponseEntity<Borrow>  createABorrow(@Valid @RequestBody List<Item> items, @PathVariable Long user_id) throws Exception{
 		
 		User user= userRepository.findById(user_id).orElseThrow(() -> new EntityNotFoundException());
@@ -51,7 +51,7 @@ public class BorrowController {
 
 
 	
-@DeleteMapping("/delete-borrow/{idBorrow}")
+@DeleteMapping("/delete/{idBorrow}")
 	public void deleteItem(@PathVariable Long idBorrow) {
 		Borrow borrow = borrowRepository.findById(idBorrow).orElseThrow(()-> new EntityNotFoundException());
 		borrow.setId(idBorrow);

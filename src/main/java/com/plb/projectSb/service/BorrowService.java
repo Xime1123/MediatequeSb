@@ -1,5 +1,6 @@
 package com.plb.projectSb.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import java.util.ArrayList;
@@ -100,18 +101,11 @@ public class BorrowService {
 			 returnItem.setCopiesNumber(returnItem.getCopiesNumber()+1);
 			 itemRepository.save(returnItem);
 			
-			
+
+	
 		}
-	
-  
-		
-		
-		
 	}
-	
-	
-		
-	}
+}
   
 
  

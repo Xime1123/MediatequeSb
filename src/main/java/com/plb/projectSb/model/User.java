@@ -3,6 +3,7 @@ package com.plb.projectSb.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -108,6 +109,34 @@ public class User implements Serializable {
 
 	public void setBorrows(Set<Borrow> borrows) {
 		this.borrows = borrows;
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(firstname, id, lastname, login, password);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(firstname, other.firstname) && Objects.equals(id, other.id)
+				&& Objects.equals(lastname, other.lastname) && Objects.equals(login, other.login)
+				&& Objects.equals(password, other.password);
+	}
+
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", login=" + login + ", password=" + password + ", firstname=" + firstname
+				+ ", lastname=" + lastname + "]";
 	}
 
 

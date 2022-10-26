@@ -22,7 +22,8 @@ public class UserService {
 	// Get user by login
     public User findByLogin(String login) throws EntityNotFoundException {
 		
-    	return  userRepository.findByLogin(login).orElseThrow(() -> new EntityNotFoundException("User does not exist!"));
+    	return  userRepository.findByLogin(login).
+    			orElseThrow(() -> new EntityNotFoundException("User does not exist!"));
 			
 	}
 	
